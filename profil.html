@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page web</title>
+    <link rel="profil_css" href="profil_css.css" />
+  </head>
+  <body>
+    <template>
+      <div class="card">
+        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngegg.com%2Ffr%2Fpng-hrvbt&psig=AOvVaw2tVncbgnK6jd2C5RJP0O9i&ust=1653210948350000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCNCfuu-g8PcCFQAAAAAdAAAAABAD" alt="" width="200px" />
+        <div class="container">
+          <h4>Placeholder</h4>
+          <p>Placeholder</p>
+        </div>
+      </div>
+    </template>
+
+
+    <script>
+        fetch("/Cars")
+            .then((response) => response.json())
+            .then((data) =>{
+                data.forEach((car) => {
+                    const cardTemplate = document.querySelector('template');
+                    const card = cardTemplate.content.cloneNode(true);
+                
+                    card.querySelector('p').innerText = Cars.model;
+                
+                    card.querySelector('p').innerInteger = Cars.name;
+                
+                    card.querySelector('p').innerVarchar = Cars.motor;
+                
+                    card.querySelector('p').innerVarchar = Cars.box;
+                
+                    card.querySelector('p').innerVarchar = Cars.Energie;
+                
+                    card.querySelector('p').innerVarchar = Cars.price;
+
+            }
+        } 
+       
+        
+    </script>
+
+  </body>
+
+</html>
